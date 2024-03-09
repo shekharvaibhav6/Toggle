@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2>Made By Vaibhav Shekhar</h2>
+    <h1>Welcome to toggle button</h1>
+    <button id="btn">Toggle Theme</button>
+    <p id="pg">Text will show which mode is this once you will toggle</p>
+  </body>
+  <style>
+    .dark{
+    background-color: black;
+    color: white;
+}
+.light{
+    background-color: white;
+    color:black;
+}
+  </style>
+  <script>
+    var btn=document.querySelector("#btn");
+    let p=document.querySelector("#pg")
+    let curr='light';
+    let body=document.querySelector("body");        
+    btn.addEventListener('click',()=>{
+        if(curr==="light"){
+            curr="dark";
+            body.classList.add("dark");
+            body.classList.remove("light");
+            document.getElementById("pg").innerHTML="This is dark mode";
+        }else{
+            curr="light";
+            body.classList.add("light");
+            body.classList.remove("dark");
+            document.getElementById("pg").innerHTML="This is light mode";
+        }
+        console.log(curr);
+    })
+  </script>
+</html>
